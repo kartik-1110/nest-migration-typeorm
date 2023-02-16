@@ -1,8 +1,8 @@
 {
   "name": "migration-seeding",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A nest js app with DB migrations using typeorm .",
+  "author": "Kartik Pal",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
