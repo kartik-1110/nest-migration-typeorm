@@ -58,6 +58,18 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Available scripts
+
+In the project directory, you can run :
+
+**Note**: Following commands and scripts will only runs on linux bash not on other OS native cli's.
+
+| Command                             | Description                                                                                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `npm run migration:generate`        | Generates a new migration.                                                                     |
+| `npm run migration:run`             | Runs the new migration to sync with the given database.                                        |
+| `npm run migration:revert`          | Reverts the specified migration.                                                               |
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
