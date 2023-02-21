@@ -1,6 +1,8 @@
 import { DataSource, DataSourceOptions } from "typeorm";
+import {SeederOptions} from 'typeorm-extension'
+import { MainSeeder } from "./seeds/mainSeeder.seed";
 
-export const dataSourceOptions: DataSourceOptions ={
+export const dataSourceOptions: DataSourceOptions & SeederOptions ={
     type: 'postgres',
     host: 'localhost',
     port: 5432,
@@ -8,7 +10,8 @@ export const dataSourceOptions: DataSourceOptions ={
     password: 'root',
     database: 'migration',
     entities: ['dist/**/*.entity.js'],
-    migrations: ['dist/db/migrations/*.js']
+    migrations: ['dist/db/migrations/*.js'],
+    seeds: [MainSeeder]
 }
 
 const dataSource = new DataSource(dataSourceOptions)
