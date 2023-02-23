@@ -24,7 +24,8 @@
     "migration:create": "typeorm migration:create",
     "migration:run": "npm run typeorm -- migration:run",
     "migration:revert": "npm run typeorm -- migration:revert",
-    "seed": "ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d dist/db/data-source.js"
+    "seed:create": "bash template/scripts/createSeed.sh",
+    "seed": "npm run build && ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d db/data-source.js"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
@@ -32,6 +33,7 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
+    "inquirer": "^9.1.4",
     "pg": "^8.9.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

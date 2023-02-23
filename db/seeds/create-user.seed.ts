@@ -1,17 +1,22 @@
-import { User } from 'src/users/entities/user.entity';
+import { User } from '../../src/users/entities/user.entity';
 import { DataSource } from 'typeorm';
 import { Seeder, SeederFactoryManager } from 'typeorm-extension'
 
+
 export default class CreateUser implements Seeder {
   async run(dataSource: DataSource, factoryManager: SeederFactoryManager): Promise<any> {
+
+    console.log('hit:::testing');
+
     const userRepository = dataSource.getRepository(User)
 
     const userData = {
-      name: "Test User",
-      email: "test@gmail.com"
+      name: "Test 999",
+      email: "test999@gmail.com",
+      role: 'USER'
     }
 
-    const newUser = userRepository.create(userData)
+    const newUser = await userRepository.create(userData)
     await userRepository.save(newUser)
   }
 

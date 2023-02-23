@@ -8,7 +8,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
-    UsersModule,
+    UsersModule
   ],
   controllers: [AppController],
   providers: [AppService],
