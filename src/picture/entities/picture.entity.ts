@@ -11,4 +11,7 @@ export class Picture {
 
     @Column()
     picture2: string
+
+    @Column()
+    url: string
 }
