@@ -2,22 +2,17 @@ import { User } from '../../src/users/entities/user.entity';
 import { DataSource } from 'typeorm';
 import { Seeder, SeederFactoryManager } from 'typeorm-extension'
 
-
+/* This is seeder class which uses factory function to create dummy data */ 
 export default class CreateUser implements Seeder {
   async run(dataSource: DataSource, factoryManager: SeederFactoryManager): Promise<any> {
 
-    console.log('hit:::testing');
+    const userFactory = await factoryManager.get(User);
+    // save 1 factory generated entity, to the database
+    await userFactory.save();
 
-    const userRepository = dataSource.getRepository(User)
-
-    const userData = {
-      name: "Test 999",
-      email: "test999@gmail.com",
-      role: 'USER'
-    }
-
-    const newUser = await userRepository.create(userData)
-    await userRepository.save(newUser)
+    // save 5 factory generated entities, to the database
+    await userFactory.saveMany(10);
+    
   }
 
 }

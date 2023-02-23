@@ -1,4 +1,3 @@
-import { User } from "../src/users/entities/user.entity";
 import { DataSource, DataSourceOptions } from "typeorm";
 import { SeederOptions } from 'typeorm-extension'
 import { MainSeeder } from "./seeds/mainSeeder.seed";
@@ -13,8 +12,7 @@ export const dataSourceOptions: DataSourceOptions & SeederOptions = {
     database: 'migration',
     entities: ["src/**/entities/*.entity{.js,.ts}"],
     migrations: [__dirname + '/db/migrations/*.js'],
-    /* TODO: To be implemented with factories */ 
-    // factories: ["./factories/*.factory{.js,.ts}"],
+    factories: ["dist/db/factories/*.factory.js"],
     seeds: [MainSeeder]
 }
 
