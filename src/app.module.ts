@@ -10,7 +10,7 @@ import { UsersModule } from './users/users.module';
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
     UsersModule,
-    ProfileModule
+    ProfileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
