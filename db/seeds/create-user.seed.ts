@@ -13,7 +13,7 @@ export default class CreateUser implements Seeder {
     const userData = {
       name: "Test 999",
       email: "test999@gmail.com",
-      role: 'USER'
+      role: 'USER',
     }
 
     const newUser = await userRepository.create(userData)

@@ -19,11 +19,12 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "npm run build && npx typeorm -d dist/db/data-source.js",
+    "typeorm": "npm run build && npx typeorm-ts-node-commonjs -d dist/db/data-source.js",
     "migration:generate": "npm run typeorm -- migration:generate",
     "migration:create": "typeorm migration:create",
     "migration:run": "npm run typeorm -- migration:run",
     "migration:revert": "npm run typeorm -- migration:revert",
+    "migrate":"npm run migration:generate db/migrations/migrate && npm run migration:run",
     "seed:create": "bash template/scripts/createSeed.sh",
     "seed": "npm run build && ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d db/data-source.js"
   },
